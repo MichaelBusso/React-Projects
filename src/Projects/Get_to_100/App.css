@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+}
+
+.panelButtonsContainer {
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+  background-color: rgb(227, 210, 210);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.startButton button {
+  background-color: rgb(255, 0, 0);
+  border: none;
+  font-size: X-large;
+  width: 150px;
+  border-radius: 20px;
+}
+
+.startButton button:hover {
+  background-color: rgb(235, 71, 71);
+}
+
+.panelGamersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+  background-color: rgb(227, 210, 210);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+button {
+  display: inline-block;
+  min-width: 100px;
+  height: 40px;
+  line-height: 40px;
+  margin: 20px 2px;
+  text-align: center;
+  background-color: #3498db;
+  color: #fff;
+  border: 1px solid #2980b9;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s ease-in-out;
+}
+
+button:hover {
+  background-color: #2980b9;
+}

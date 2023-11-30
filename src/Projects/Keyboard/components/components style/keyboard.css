@@ -1,0 +1,10 @@
+.keyboard,
+.special {
+    max-width: 593px;
+    min-width: 540px;
+    margin: 20px auto 20px;
+}
+
+.keyboard .space button{
+    width: 70%;
+}

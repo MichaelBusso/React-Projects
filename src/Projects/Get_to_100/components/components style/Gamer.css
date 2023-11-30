@@ -1,0 +1,39 @@
+.container {
+    width: 550px;
+    margin: 40px auto;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.container .enable {
+  color: red;
+}
+
+.container .finished {
+  color: green;
+}
+
+.container button {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    margin: 2px;
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.1s ease-in-out;
+  }
+  
+  .container button:hover {
+    background-color: #2980b9;
+  }

@@ -1,0 +1,28 @@
+.key {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 2px;
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.1s ease-in-out;
+  }
+  
+  .key:hover {
+    background-color: #2980b9;
+  }
+
+  .button {
+    width: 100px;
+    margin: 5px;
+  }
+  

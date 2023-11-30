@@ -1,0 +1,48 @@
+.on_the_shelf {
+    background-color: green;
+}
+
+.out_of_the_stock {
+    background-color: red;
+    opacity: 0.5;
+}
+
+.more_then_100_likes {
+    font-size: xx-large;
+}
+
+.on_the_shelf,
+.out_of_the_stock {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgba(0, 51, 255, 0.792);
+    color: antiquewhite;
+    margin: 5px;
+}
+
+button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#Harry\ Potter{
+    background-image: url(https://upload.wikimedia.org/wikipedia/he/thumb/3/3c/%D7%94%D7%90%D7%A8%D7%99_%D7%A4%D7%95%D7%98%D7%A8_%D7%95%D7%90%D7%91%D7%9F_%D7%94%D7%97%D7%9B%D7%9E%D7%99%D7%9D_%D7%A1%D7%A4%D7%A8.jpeg/640px-%D7%94%D7%90%D7%A8%D7%99_%D7%A4%D7%95%D7%98%D7%A8_%D7%95%D7%90%D7%91%D7%9F_%D7%94%D7%97%D7%9B%D7%9E%D7%99%D7%9D_%D7%A1%D7%A4%D7%A8.jpeg);
+}
+
+#The\ Lord\ of\ the\ Rings {
+    background-image: url(https://upload.wikimedia.org/wikipedia/he/thumb/9/98/%D7%A9%D7%A8_%D7%94%D7%98%D7%91%D7%A2%D7%95%D7%AA-_%D7%A9%D7%A0%D7%99_%D7%94%D7%A6%D7%A8%D7%99%D7%97%D7%99%D7%9D_-_%D7%9B%D7%A8%D7%96%D7%94_%D7%A2%D7%91%D7%A8%D7%99%D7%AA_2002.jpeg/640px-%D7%A9%D7%A8_%D7%94%D7%98%D7%91%D7%A2%D7%95%D7%AA-_%D7%A9%D7%A0%D7%99_%D7%94%D7%A6%D7%A8%D7%99%D7%97%D7%99%D7%9D_-_%D7%9B%D7%A8%D7%96%D7%94_%D7%A2%D7%91%D7%A8%D7%99%D7%AA_2002.jpeg);
+}
+
+#A\ Song\ of\ Ice\ and\ Fire{
+    background-image: url(https://img1.od-cdn.com/ImageType-400/0292-1/7AF/3D3/BB/%7B7AF3D3BB-504F-42C7-B45B-51D48EF0517C%7DImg400.jpg);
+}
+
+#Harry\ Potter,
+#The\ Lord\ of\ the\ Rings,
+#A\ Song\ of\ Ice\ and\ Fire {
+    background-size: cover;
+}

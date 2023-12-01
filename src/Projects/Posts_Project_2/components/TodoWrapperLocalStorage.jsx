@@ -3,15 +3,18 @@ import TodoForm from './TodoForm'
 import Todo from './Todo';
 import EditTodoForm from './EditTodoForm';
 import apiRequest from './apiRequest';
+import Buttons from './Buttons';
 
 export const TodoWrapperLocalStorage = () => {
 
     const [todos, setTodos] = useState([]);
     const [allTodos, setAllTodos] = useState([]);
 
+    const userId = (JSON.parse(localStorage.getItem('activeUser')))[0].id;
+
     useEffect(() => {
-        const fetchTodos = async (userId) => {
-            const response = await fetch(`http://localhost:3500/todos?userId=1`);
+        const fetchTodos = async () => {
+            const response = await fetch(`http://localhost:3500/todos?userId=${userId}`);
             const savedTodos = await response.json();
             setTodos(savedTodos);
             setAllTodos(savedTodos);
@@ -32,7 +35,7 @@ export const TodoWrapperLocalStorage = () => {
             },
             body: JSON.stringify(newTodo)
         }
-        await apiRequest(`http://localhost:3500/todos?userId=1`, postOption)
+        await apiRequest(`http://localhost:3500/todos?userId=${userId}`, postOption)
     }
 
     const toggleComplete = async (id) => {
@@ -87,26 +90,6 @@ export const TodoWrapperLocalStorage = () => {
         });
     }
 
-    const sortByDoneHandler = () => {
-        setTodos(allTodos.filter((item) => item.completed));
-    }
-
-    const sortByNotDoneHandler = () => {
-        setTodos(allTodos.filter((item) => !item.completed));
-    }
-
-    const sortByAlphabeticalHandler = () => {
-        setTodos(allTodos.slice().sort((itemA, itemB) => itemA.title.localeCompare(itemB.title)));
-    }
-
-    const sortRandomlyHandler = () => {
-        setTodos(allTodos.slice().sort(() => Math.random() - 0.5));
-    }
-
-    const withoutFiltersHandler = () => {
-        setTodos(allTodos);
-    }
-
     return (
         <div className='TodoWrapper'>
             <h1>Todos!</h1>
@@ -114,11 +97,7 @@ export const TodoWrapperLocalStorage = () => {
                 addTodo={addTodo}
             />
             <div className='btns'>
-                <button onClick={sortByDoneHandler}>Done</button>
-                <button onClick={sortByNotDoneHandler}>Not Done</button>
-                <button onClick={sortByAlphabeticalHandler}>Alphabetical</button>
-                <button onClick={sortRandomlyHandler}>Randomly</button>
-                <button onClick={withoutFiltersHandler}>Without Filters</button>
+                <Buttons setTodos={setTodos} allTodos={allTodos}/>
             </div>
 
             {todos.map((todo, index) => (
@@ -126,6 +105,7 @@ export const TodoWrapperLocalStorage = () => {
                     <EditTodoForm
                         editTodo={editTask}
                         task={todo}
+                        key={index}
                     />
                 ) : (
                     <Todo
@@ -138,7 +118,6 @@ export const TodoWrapperLocalStorage = () => {
                 )
 
             ))}
-
         </div>
     )
 }

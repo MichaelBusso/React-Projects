@@ -47,12 +47,24 @@ h1 {
   color: #fff;
 }
 
-.todo-input::placeholder {
+.search {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #fff;
+}
+
+.todo-input::placeholder,
+.search::placeholder {
   color: #ffffff4d;
 }
 
 .btns button {
-  background: rgb(186, 174, 174);
+  background: rgb(255, 255, 255);
   color: #8758ff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
@@ -61,6 +73,7 @@ h1 {
   margin-right: 10px;
   border: none;
   cursor: pointer;
+  font-weight: bolder;
 }
 
 .btns button:hover {

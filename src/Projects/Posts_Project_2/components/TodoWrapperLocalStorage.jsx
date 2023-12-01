@@ -4,6 +4,7 @@ import Todo from './Todo';
 import EditTodoForm from './EditTodoForm';
 import apiRequest from './apiRequest';
 import Buttons from './Buttons';
+import SearchTodo from './SearchTodo';
 
 export const TodoWrapperLocalStorage = () => {
 
@@ -21,6 +22,10 @@ export const TodoWrapperLocalStorage = () => {
         }
         (async () => await fetchTodos())();
     }, [])
+
+    const searchHandler = (e) => {
+        setTodos(allTodos.filter((item) => item.title.includes(e.target.value)));
+    }
 
     const addTodo = async (todo) => {
         const newTodo = { userId: (JSON.parse(localStorage.getItem('activeUser')))[0].id, title: todo, completed: false };
@@ -97,9 +102,9 @@ export const TodoWrapperLocalStorage = () => {
                 addTodo={addTodo}
             />
             <div className='btns'>
-                <Buttons setTodos={setTodos} allTodos={allTodos}/>
+                <Buttons setTodos={setTodos} allTodos={allTodos} />
             </div>
-
+            <SearchTodo searchHandler={searchHandler} />
             {todos.map((todo, index) => (
                 todo.isEditing ? (
                     <EditTodoForm

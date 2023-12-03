@@ -9,7 +9,7 @@
 }
 
 body {
-    background: #8758ff;
+    background: #459a56;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ h1 {
 .todo-input {
     outline: none;
     background: none;
-    border: 1px solid #8758ff;
+    border: 1px solid #459a56;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     width: calc(80% - 80px);
@@ -47,7 +47,7 @@ h1 {
 .search {
     outline: none;
     background: none;
-    border: 1px solid #8758ff;
+    border: 1px solid #459a56;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     width: calc(100% - 120px);
@@ -55,7 +55,7 @@ h1 {
 }
 
 #dropDown {
-    background: #8758ff;
+    background: #459a56;
     color: #fff;
     border: none;
     padding: 0.55rem;
@@ -70,7 +70,7 @@ h1 {
 
 .btns button {
     background: rgb(255, 255, 255);
-    color: #8758ff;
+    color: #459a56;
     padding: 0.75rem 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -86,7 +86,7 @@ h1 {
 }
 
 .todo-btn {
-    background: #8758ff;
+    background: #459a56;
     color: #fff;
     border: none;
     padding: 0.55rem;
@@ -98,7 +98,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #8758ff;
+    background: #459a56;
     color: #fff;
     padding: 0.75rem 1rem;
     border-radius: 5px;

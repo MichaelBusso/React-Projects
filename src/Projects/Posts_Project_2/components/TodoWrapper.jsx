@@ -5,8 +5,8 @@ import EditTodoForm from './EditTodoForm';
 import apiRequest from './apiRequest';
 import Buttons from './Buttons';
 import SearchTodo from './SearchTodo';
-
-export const TodoWrapperLocalStorage = () => {
+import './components style/TodoWrapper.css'
+const TodoWrapper = () => {
 
     const [todos, setTodos] = useState([]);
     const [allTodos, setAllTodos] = useState([]);
@@ -23,8 +23,19 @@ export const TodoWrapperLocalStorage = () => {
         (async () => await fetchTodos())();
     }, [])
 
-    const searchHandler = (e) => {
-        setTodos(allTodos.filter((item) => item.title.includes(e.target.value)));
+    const searchHandler = (inputValue, selected) => {
+        if (selected === '' || selected === 'title' || selected === 'searchForAll') {
+            setTodos(allTodos.filter((item) => item.title.includes(inputValue)));
+        }
+        if (selected === 'done') {
+            setTodos(allTodos.filter((item) => item.title.includes(inputValue) && item.completed));
+        }
+        if (selected === 'notDone') {
+            setTodos(allTodos.filter((item) => item.title.includes(inputValue) && !item.completed));
+        }
+        if (selected === 'idNumber') {
+            setTodos(allTodos.filter((item) => String(item.id).startsWith(inputValue)));
+        }
     }
 
     const addTodo = async (todo) => {
@@ -126,3 +137,5 @@ export const TodoWrapperLocalStorage = () => {
         </div>
     )
 }
+
+export default TodoWrapper;

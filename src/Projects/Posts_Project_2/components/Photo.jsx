@@ -10,7 +10,7 @@ const Photo = ({ photo }) => {
     return (
         <div className="Photo">
             <p className='photo_title'>[ID: {photo.id}]: {photo.title}</p>
-            <img ref={ref} src={inView ? photo.url : ''} alt="" style={{ width: '100px', height: '100px' }} />
+            <img ref={ref} src={inView ? photo.thumbnailUrl : ''} alt="" style={{ width: '100px', height: '100px' }} />
         </div>
     )
 }

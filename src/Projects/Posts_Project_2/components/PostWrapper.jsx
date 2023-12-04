@@ -24,7 +24,7 @@ const PostsWrapper = () => {
 
   return (
     <div className='PostWrapper'>
-      <h1>Posts!</h1>
+      <h1>Posts</h1>
       {posts.map((post, index) => (
         <Post
           show={showPosts.includes(post.id) ? true : false}

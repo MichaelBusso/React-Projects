@@ -24,7 +24,7 @@ const AlbumWrapper = () => {
 
     return (
         <div className='AlbumWrapper'>
-            <h1>Albums!</h1>
+            <h1>Albums</h1>
             {albums.map((album, index) => (
                 <Album
                     show={showAlbums.includes(album.id) ? true : false}

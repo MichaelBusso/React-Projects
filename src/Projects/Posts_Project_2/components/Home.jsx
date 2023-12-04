@@ -13,10 +13,9 @@ const Home = () => {
             navigate('/');
             localStorage.removeItem('activeUser');
         }
-        else if (target === 'Info') {
-            console.log(user);
-            alert(user[0]);
-        }
+        // else if (target === 'Info') {
+        //     navigate(`/Home/${user[0].id}/${target}`);
+        // }
         else {
             navigate(`/Home/${user[0].id}/${target}`);
         }

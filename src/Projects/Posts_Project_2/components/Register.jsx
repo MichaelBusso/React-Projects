@@ -9,9 +9,9 @@ const Register = () => {
     const navigate = useNavigate();
 
     const schema = yup.object().shape({
-        name: yup.string().required('Your name is required!'),
-        password: yup.string().required('Password required!'),
-        confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'No Math!')
+        name: yup.string().required(),
+        password: yup.string().min(6).required(),
+        confirmPassword: yup.string().oneOf([yup.ref('password'), null])
     })
 
     const { register, handleSubmit } = useForm({
@@ -21,7 +21,7 @@ const Register = () => {
     const submitHandler = async (formObj) => {
         const user = await fetchUsers(formObj.name);
         if (user.length === 0) {
-            navigate(`/RegisterCompltion/:${formObj.name}/:${formObj.password}`);
+            navigate(`/RegisterCompltion/${formObj.name}/${formObj.password}`);
         }
         else {
             alert('User name not available!');

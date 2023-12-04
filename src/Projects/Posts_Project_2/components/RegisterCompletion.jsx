@@ -14,10 +14,10 @@ const RegisterCompletion = () => {
         name: yup.string().required(),
         email: yup.string().email().required(),
         address: yup.object().shape({
-            street: yup.string().required(),
+            street: yup.string(),
             suite: yup.string(),
-            city: yup.string().required(),
-            zipcode: yup.string().required(),
+            city: yup.string(),
+            zipcode: yup.string(),
             geo: yup.object().shape({
                 lat: yup.string(),
                 lng: yup.string(),

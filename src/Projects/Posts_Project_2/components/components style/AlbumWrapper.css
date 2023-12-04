@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 h1 {
@@ -21,31 +22,30 @@ h1 {
     font-size: 1.75rem;
 }
 
-.container {
+.AlbumWrapper {
     background: #1A1A40;
     margin-top: 5rem;
     padding: 2rem;
     border-radius: 5px;
-    text-align: center;
 }
 
-.btn {
+.Album {
     background: #459a56;
     color: #fff;
-    display: block;
-    text-decoration: none;
-    width: 100%;
-    border: none;
+    padding: 0.75rem 1rem;
     border-radius: 5px;
-    padding: 0.55rem;
-    margin: 10px auto;
+    margin-bottom: 1rem;
+}
+
+.album_title {
     cursor: pointer;
 }
 
-.btn:hover {
-    opacity: 0.7;
+.Photo {
+    background: #35643e;
+    border-radius: 5px;
 }
 
-.Log-out {
-    background: rgb(255, 0, 0);
+.photo_title {
+    margin: 40px 0 10px;
 }

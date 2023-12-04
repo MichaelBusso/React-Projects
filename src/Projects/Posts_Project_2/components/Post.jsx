@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { MdOutlineExpandMore, MdOutlineExpandLess } from "react-icons/md";
 
 const Post = ({ post, toggleShow, show }) => {

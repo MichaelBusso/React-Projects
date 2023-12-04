@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import TodoForm from './TodoForm'
+import TodoForm from './TodoForm';
 import Todo from './Todo';
 import EditTodoForm from './EditTodoForm';
 import apiRequest from './apiRequest';
 import Buttons from './Buttons';
 import SearchTodo from './SearchTodo';
-import './components style/TodoWrapper.css'
+import './components style/TodoWrapper.css';
 
 const TodoWrapper = () => {
 
@@ -22,7 +22,7 @@ const TodoWrapper = () => {
             setAllTodos(savedTodos);
         }
         (async () => await fetchTodos())();
-    }, [])
+    }, []);
 
     const searchHandler = (inputValue, selected) => {
         if (selected === '' || selected === 'title' || selected === 'searchForAll') {
@@ -37,7 +37,7 @@ const TodoWrapper = () => {
         if (selected === 'idNumber') {
             setTodos(allTodos.filter((item) => String(item.id).startsWith(inputValue)));
         }
-    }
+    };
 
     const addTodo = async (todo) => {
         const newTodo = { userId: (JSON.parse(localStorage.getItem('activeUser')))[0].id, title: todo, completed: false };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Post from './Post';
-import './components style/PostWrapper.css'
+import './components style/PostWrapper.css';
 
 const PostsWrapper = () => {
 

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Album from './Album';
+import './components style/AlbumWrapper.css';
 
 const AlbumWrapper = () => {
 
     const [albums, setAlbums] = useState([]);
+    const [showAlbums, setShowAlbums] = useState([]);
 
     const userId = (JSON.parse(localStorage.getItem('activeUser')))[0].id;
 
@@ -16,16 +18,20 @@ const AlbumWrapper = () => {
         (async () => await fetchAlbums())();
     }, [])
 
+    const toggleShow = (id) => {
+        showAlbums.includes(id) ? setShowAlbums(showAlbums.filter((albumId) => albumId !== id)) : setShowAlbums([...showAlbums, id]);
+    }
+
     return (
-        <div>
+        <div className='AlbumWrapper'>
+            <h1>Albums!</h1>
             {albums.map((album, index) => (
-                <>
-                    <h1>{album.title}</h1>
-                    <Album
-                        album={album}
-                        key={index}
-                    />
-                </>
+                <Album
+                    show={showAlbums.includes(album.id) ? true : false}
+                    album={album}
+                    key={index}
+                    toggleShow={toggleShow}
+                />
             ))}
         </div>
     )

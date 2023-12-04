@@ -9,7 +9,7 @@
 }
 
 body {
-    background: #8758ff;
+    background: #459a56;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@ h1 {
     font-size: 1.75rem;
 }
 
-.form_container {
+.form_container_registerCompltion {
     background: #1A1A40;
     margin-top: 5rem;
     padding: 2rem;
@@ -29,9 +29,9 @@ h1 {
     text-align: center;
 }
 
-.form input {
+.form_registerCompltion input {
     background: rgb(255, 255, 255);
-    color: #8758ff;
+    color: #459a56;
     width: 100%;
     padding: 0.75rem 1rem;
     border-radius: 5px;
@@ -39,8 +39,8 @@ h1 {
     border: none;
 }
 
-.btn input {
-    background:#8758ff ;
+.btn_registerCompltion input {
+    background:#459a56 ;
     color: #fff;
     width: 100%;
     border: none;
@@ -49,6 +49,6 @@ h1 {
     cursor: pointer;
 }
 
-.btn:hover {
+.btn_registerCompltion:hover {
     opacity: 0.7;
 }

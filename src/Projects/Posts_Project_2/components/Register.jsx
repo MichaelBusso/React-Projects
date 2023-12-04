@@ -1,9 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import './components style/Register.css'
+import './components style/Register.css';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+
+    const navigate = useNavigate();
 
     const schema = yup.object().shape({
         name: yup.string().required('Your name is required!'),
@@ -18,10 +21,10 @@ const Register = () => {
     const submitHandler = async (formObj) => {
         const user = await fetchUsers(formObj.name);
         if (user.length === 0) {
-            alert('Registeration was successful!')
+            navigate(`/RegisterCompltion/:${formObj.name}/:${formObj.password}`);
         }
         else {
-            alert('User name not available!')
+            alert('User name not available!');
         }
     }
 
@@ -32,15 +35,15 @@ const Register = () => {
     }
 
     return (
-        <div className='form_container'>
+        <div className='form_container_register'>
             <h1 >Register</h1>
-            <form onSubmit={handleSubmit(submitHandler)} className='form'>
-                <div className='inputs'>
+            <form onSubmit={handleSubmit(submitHandler)} className='form_register'>
+                <div className='inputs_register'>
                     <input type="text" placeholder='User Name...' {...register('name')} />
                     <input type="password" placeholder='Password...' {...register('password')} />
                     <input type="password" placeholder='Confirm Password...' {...register('confirmPassword')} />
                 </div>
-                <div className='btn'>
+                <div className='btn_register'>
                     <input type="submit" id='submit' value='Register' />
                 </div>
             </form>

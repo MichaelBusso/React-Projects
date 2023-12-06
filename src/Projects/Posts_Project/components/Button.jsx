@@ -1,7 +1,8 @@
-const Button = ({ value }) => {
+import React from 'react';
 
+const Button = ({ value, handler }) => {
     return (
-        <button>{value}</button>
+        <button onClick={handler}>{value}</button>
     )
 }
 

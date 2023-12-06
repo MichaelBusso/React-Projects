@@ -8,7 +8,7 @@ const Post = ({ post, toggleShow, show }) => {
             {!show ?
                 <MdOutlineExpandMore className='more_less' onClick={() => toggleShow(post.id)} /> :
                 <MdOutlineExpandLess className='more_less' onClick={() => toggleShow(post.id)} />}
-            <div className='comment'>
+            <div className='post_body'>
                 {show && <p>{post.body}</p>}
             </div>
         </div>

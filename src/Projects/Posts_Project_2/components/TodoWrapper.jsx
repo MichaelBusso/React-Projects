@@ -52,7 +52,7 @@ const TodoWrapper = () => {
             },
             body: JSON.stringify(newTodo)
         }
-        await apiRequest(`http://localhost:3500/todos?userId=${userId}`, postOption)
+        await apiRequest(`http://localhost:3500/todos`, postOption)
     }
 
     const toggleComplete = async (id) => {

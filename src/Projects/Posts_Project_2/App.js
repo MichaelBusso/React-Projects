@@ -1,5 +1,4 @@
-// import './App.css';
-import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Routar, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import RegisterCompltion from './components/RegisterCompletion';
@@ -11,10 +10,11 @@ import AlbumWrapper from './components/AlbumWrapper';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Routar>
       <div className="App">
         <Routes>
-          <Route path='/' element={<Login />} />
+          <Route index element={<Navigate to="/Login" />} />
+          <Route path='/Login' element={<Login />} />
           <Route path='/Home/:id' element={<Home />} />
           <Route path='/Register' element={<Register />} />
           <Route path='/RegisterCompltion/:name/:password' element={<RegisterCompltion />} />
@@ -24,7 +24,7 @@ function App() {
           <Route path='/Home/:id/Albums' element={<AlbumWrapper />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Routar>
   );
 }
 

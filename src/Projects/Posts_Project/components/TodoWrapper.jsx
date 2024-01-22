@@ -11,6 +11,7 @@ const TodoWrapper = () => {
 
     const [todos, setTodos] = useState([]);
     const [allTodos, setAllTodos] = useState([]);
+    const [todoChanged, setTodoChanged] = useState(true);
 
     const userId = (JSON.parse(localStorage.getItem('activeUser')))[0].id;
 
@@ -22,7 +23,7 @@ const TodoWrapper = () => {
             setAllTodos(savedTodos);
         }
         (async () => await fetchTodos())();
-    }, []);
+    }, [todoChanged]);
 
     const searchHandler = (inputValue, selected) => {
         if (selected === '' || selected === 'title' || selected === 'searchForAll') {
@@ -44,6 +45,7 @@ const TodoWrapper = () => {
         console.log(newTodo.userId);
         const newTodos = [...todos, newTodo];
         setTodos(newTodos);
+        setTodoChanged(!todoChanged);
 
         const postOption = {
             method: 'POST',
